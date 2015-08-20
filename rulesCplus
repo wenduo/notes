@@ -1,0 +1,12 @@
+Here are some rule to obey to write robust c+= codes
+*****************************************
+type:
+1. don't mess signed with unsigned type
+	eg.if an unsigned int is asigned to minus value t,the true value is ~t
+		
+	
+*****************************************
+class concept:
+1.initial is totally different from assign,
+	class b();	
+	class a=b is initial 

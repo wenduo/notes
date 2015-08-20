@@ -1,0 +1,92 @@
+#this is a fundamental note for c++ feature and usage
+*************************************************************************
+main:
+1.return value of main
+	echo $? can print the return value of main(after program run)
+*************************************************************************
+cpp:
+1.variable:
+	a variable can only be define once,but declared many times.
+	use extern to declare a global variable.
+2.namespace
+	::d means variable b in global scope.if a variable is defined out of any {},it's in the global scope.
+	we can define namespace
+
+
+
+
+*************************************************************************
+IO:
+1.io object
+	Four IO object:cin,cout,cerr,clog. the last 3 inherit from ostream.
+2.<<:
+	The << operator receive two operands(left and right),
+  	and it returns the left operand after write on left operand.
+3.endl:
+	When you print log,use manipulator endl to end line and flush the buffer.In case the program crash and we don't get the true output.
+4.unknown input:
+	while(cin>>value),cin is invalid when we hit end-of-file,and while ends then
+5.file input&output:
+	use redireaction to input file and output to file
+	eg. ./a.out <in >out
+*************************************************************************
+operators:
+1. . :
+	. access the rhs member of object lhs
+2. ():
+	() take the args and call the lhs function
+2. */& :
+	means different in declaration and as an operator
+		in declaration: * & combines with other type to declare,it's used  to modify.
+		as an operator: & to get address, * reverse. these operators are used not modify,but to get values. 
+	eg: int *p=&i;		//declare
+	    *p =100;		//get the value stored in address p
+	    int *p1,p2;		//p2 is a int, * is a modifier for p1.
+3. const:
+	gcc repalce each const variable with it's origin value,so we need to access all consts in every file.So consts are read-only
+	define global const by extern
+#########
+const and reference
+      1.all reference is read only,which means we can't change what reference binds.
+      2.const int &a means a referrence to a const int ,but there are illegal references,eg.
+			code:const int &a=b // b is a double
+	gcc change this code into:
+			const int temp=b;
+			const int &a=temp;			
+	this means a bind to a temp variable instead of b
+      3.we can get normal variable a const reference.we can't change it by const reference but by other means
+#########
+const and pointers
+	1.a pointer to const can points to both const variable and non-const variable 
+	  but only a pointer to point can point to a const variable.
+	2.pointer is an object so we can use const pointers too,while reference is not object but "const"
+		const int * p is a pointer to const
+		int * const p is a const pointer.
+		the trick is read from right to left to determin what kind of variable p really is.
+	3.top-level const means a const pointer,low-level const means a pointer to const.
+	  only pointers with same low-level can be copy each other.
+*************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

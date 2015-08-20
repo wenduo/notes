@@ -1,0 +1,7 @@
+**********************************************
+length:
+	a byte = 8 bit,
+	a c int= 4 byte, both in 32/64 bit machine
+	a c pointer=4 byte in 32,8 byte in 64
+	a c char=1 byte.
+**********************************************

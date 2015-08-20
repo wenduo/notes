@@ -1,0 +1,9 @@
+******************************************
+lldb:
+	lldb to llvm is like gdb to gcc
+commands:
+	n:next step
+	ni:next instrucion level
+	d:show the assamble frame
+	p:print something
+*******************************************
